@@ -27,7 +27,20 @@
             position: sticky; top: 0; z-index: 1000;
         }
         .nav-right { display: flex; align-items: center; gap: 20px; }
-        .brand-name { font-weight: bold; color: var(--neon-blue); font-size: 1.5rem; text-shadow: 0 0 10px var(--neon-blue); }
+        
+        /* تعديل اسم العلامة التجارية ليكون قابلاً للضغط */
+        .brand-name { 
+            font-weight: bold; 
+            color: var(--neon-blue); 
+            font-size: 1.5rem; 
+            text-shadow: 0 0 10px var(--neon-blue); 
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .brand-name:hover {
+            text-shadow: 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue);
+            transform: scale(1.05);
+        }
 
         /* صندوق اللغات */
         .lang-box { display: flex; background: #111; border: 1px solid #333; border-radius: 8px; overflow: hidden; }
@@ -73,7 +86,7 @@
 
     <nav class="navbar">
         <div class="nav-right">
-            <div class="brand-name" id="nav-brand">معرض حازم</div>
+            <div class="brand-name" id="nav-brand" onclick="location.reload()" title="العودة للرئيسية">معرض حازم</div>
             <div class="lang-box">
                 <button class="lang-btn active" id="btn-ar" onclick="setLanguage('ar')">AR</button>
                 <button class="lang-btn" id="btn-fr" onclick="setLanguage('fr')">FR</button>
